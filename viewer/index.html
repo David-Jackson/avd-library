@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>AVD Library</title>
+	<link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+	<div id="settings">
+	  <input type="range" min="1000" max="20000" value="2000" class="slider" id="durationSlider">
+	</div>
+
+    <div id="content"></div>
+	
+	<script>
+
+        var BASE_SPRITE_URL = "https://rawgit.com/David-Jackson/avd-library/master/animations/spritesheet/";
+        var BASE_API_URL = "https://api.github.com/repos/david-jackson/avd-library/git/trees/master";
+
+        var content = document.getElementById("content");
+        var slider = document.getElementById("durationSlider");
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+            updateAnimationDuration(this.value);
+        }
+		
+		function updateAnimationDuration(duration) {
+			var anims = document.getElementsByClassName("shapeshifter");
+			for (var i = 0; i < anims.length; i++) {
+                // restart animation
+                anims[i].style.animation = 'none';
+                anims[i].offsetHeight; /* trigger reflow */
+                anims[i].style.animation = null;
+
+				anims[i].style.animationDuration = duration + "ms";
+			}
+		}
+
+        function fetchTree(json, treeName) {
+            for (var i in json.tree) {
+                var obj = json.tree[i];
+                if (obj.path == treeName) {
+                    return fetch(obj.url);
+                }
+            };
+        }
+
+        function populateSpritesheets(tree) {
+            tree.forEach(obj => addSpriteSheet(obj.path));
+        }
+
+        function addSpriteSheet(path) {
+            var url = BASE_SPRITE_URL + path;
+            console.log(url);
+            var div = document.createElement("div");
+            div.className = "shapeshifter play";
+            div.style.backgroundImage = "url(" + url + ")";
+            content.appendChild(div);
+        }
+
+        // get all spritesheets in repo using Github API
+        fetch(BASE_API_URL)
+            .then(resp => resp.json())
+            .then(json => fetchTree(json, "animations"))
+            .then(resp => resp.json())
+            .then(json => fetchTree(json, "spritesheet"))
+            .then(resp => resp.json())
+            .then(json => populateSpritesheets(json.tree))
+            .catch(err => console.log(err));
+	</script>
+</body>
+</html>
