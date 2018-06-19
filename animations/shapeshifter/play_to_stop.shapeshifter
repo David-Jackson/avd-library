@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "292",
+      "name": "vector",
+      "type": "vector",
+      "children": [
+        {
+          "id": "294",
+          "name": "group",
+          "type": "group",
+          "pivotX": 12,
+          "pivotY": 12,
+          "children": [
+            {
+              "id": "308",
+              "name": "path",
+              "type": "path",
+              "pathData": "M 8 5 L 8 19 L 19 12 Z",
+              "fillColor": "#000",
+              "strokeWidth": 1
+            }
+          ]
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "293",
+      "name": "anim",
+      "duration": 300,
+      "blocks": [
+        {
+          "id": "313",
+          "layerId": "294",
+          "propertyName": "rotation",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": 90
+        },
+        {
+          "id": "315",
+          "layerId": "308",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "path",
+          "fromValue": "M 8 5 L 19 12 L 19 12 L 19 12 L 8 19 Z",
+          "toValue": "M 6 6 L 18 6 L 18 12 L 18 18 L 6 18 Z"
+        }
+      ]
+    }
+  }
+}

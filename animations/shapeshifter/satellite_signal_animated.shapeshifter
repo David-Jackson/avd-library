@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "1",
+      "name": "vector",
+      "type": "vector",
+      "children": [
+        {
+          "id": "399",
+          "name": "mountains_path",
+          "type": "path",
+          "pathData": "M 5 18 L 8.5 13.5 L 11 16.51 L 14.5 12 L 19 18 L 5 18 Z",
+          "fillColor": "#000000"
+        },
+        {
+          "id": "39732",
+          "name": "mask",
+          "type": "mask",
+          "pathData": "M 5 5 L 5 19 L 19 19 L 19 5 L 5 5 Z"
+        },
+        {
+          "id": "3",
+          "name": "signal_path",
+          "type": "path",
+          "pathData": "M 5 5 C 5 5 5 5 5 5 L 5 5 C 5 5 5 5 5 5 L 5 5",
+          "fillColor": "#000000"
+        },
+        {
+          "id": "49938",
+          "name": "signal_2_path",
+          "type": "path",
+          "pathData": "M 5 7 C 6.107 7 7 6.107 7 5",
+          "strokeColor": "#000000",
+          "strokeWidth": 2
+        },
+        {
+          "id": "55053",
+          "name": "signal_3_path",
+          "type": "path",
+          "pathData": "M 5 11 C 8.32 11 11 8.32 11 5",
+          "strokeColor": "#000000",
+          "strokeWidth": 2
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "2",
+      "name": "anim",
+      "duration": 1000,
+      "blocks": [
+        {
+          "id": "469",
+          "layerId": "3",
+          "propertyName": "pathData",
+          "startTime": 270,
+          "endTime": 1000,
+          "interpolator": "LINEAR",
+          "type": "path",
+          "fromValue": "M 5 5 C 5 5 5 5 5 5 L 5 5 C 5 5 5 5 5 5 L 5 5",
+          "toValue": "M 5 6 C 5.553 6 6 5.553 6 5 L 8 5 C 8 6.66 6.66 8 5 8 L 5 6"
+        },
+        {
+          "id": "49944",
+          "layerId": "49938",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 1000,
+          "interpolator": "LINEAR",
+          "type": "path",
+          "fromValue": "M 5 7 C 6.107 7 7 6.107 7 5",
+          "toValue": "M 5 11 C 8.32 11 11 8.32 11 5"
+        },
+        {
+          "id": "55293",
+          "layerId": "55053",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 1000,
+          "interpolator": "LINEAR",
+          "type": "path",
+          "fromValue": "M 5 11 C 8.32 11 11 8.32 11 5",
+          "toValue": "M 5 15 C 10.533 15 15 10.533 15 5"
+        },
+        {
+          "id": "61494",
+          "layerId": "55053",
+          "propertyName": "strokeAlpha",
+          "startTime": 200,
+          "endTime": 1000,
+          "interpolator": "LINEAR",
+          "type": "number",
+          "fromValue": 1,
+          "toValue": 0
+        }
+      ]
+    }
+  }
+}

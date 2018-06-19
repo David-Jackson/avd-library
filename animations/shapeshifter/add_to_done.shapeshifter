@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "21",
+      "name": "vector",
+      "type": "vector",
+      "children": [
+        {
+          "id": "44402",
+          "name": "group",
+          "type": "group",
+          "pivotX": 12,
+          "pivotY": 12,
+          "children": [
+            {
+              "id": "3",
+              "name": "add_path",
+              "type": "path",
+              "pathData": "M 19 13 L 13 13 L 13 19 L 11 19 L 11 13 L 5 13 L 5 11 L 11 11 L 11 5 L 13 5 L 13 11 L 19 11 L 19 13 Z",
+              "fillColor": "#FF000000"
+            }
+          ]
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "2",
+      "name": "anim",
+      "duration": 300,
+      "blocks": [
+        {
+          "id": "41",
+          "layerId": "3",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "path",
+          "fromValue": "M 19 13 L 5 13 L 5 11 L 19 11 L 19 13 Z M 13 19 L 11 19 L 11 5 L 13 5 L 13 19 Z",
+          "toValue": "M 12 4.8 L 6.4 10.4 L 5 9 L 10.6 3.4 L 12 4.8 Z M 18.4 19.6 L 17 21 L 5 9 L 6.4 7.6 L 18.4 19.6 Z"
+        },
+        {
+          "id": "105876",
+          "layerId": "44402",
+          "propertyName": "rotation",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": -90
+        }
+      ]
+    }
+  }
+}

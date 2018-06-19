@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "3576",
+      "name": "playtopause",
+      "type": "vector",
+      "children": [
+        {
+          "id": "3577",
+          "name": "group",
+          "type": "group",
+          "pivotX": 12,
+          "pivotY": 12,
+          "children": [
+            {
+              "id": "3578",
+              "name": "path",
+              "type": "path",
+              "pathData": "M 5 6 L 5 6 L 5 10 L 19 10 L 19 6 L 5 6 M 5 14 L 5 18 L 19 18 L 19 14 L 19 14 L 5 14",
+              "fillColor": "#000000",
+              "strokeWidth": 1
+            }
+          ]
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "3579",
+      "name": "anim",
+      "duration": 300,
+      "blocks": [
+        {
+          "id": "3580",
+          "layerId": "3578",
+          "propertyName": "pathData",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "path",
+          "fromValue": "M 5 6 L 5 6 L 5 10 L 19 10 L 19 6 L 5 6 M 5 14 L 5 18 L 19 18 L 19 14 L 19 14 L 5 14",
+          "toValue": "M 8 5 L 8 5 L 8 12.022 L 19 12 L 19 12 L 8 5 M 8 12.022 L 8 19 L 19 12 L 19 12 L 19 12 L 8 12.022"
+        },
+        {
+          "id": "3581",
+          "layerId": "3577",
+          "propertyName": "rotation",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 270,
+          "toValue": 360
+        }
+      ]
+    }
+  }
+}
