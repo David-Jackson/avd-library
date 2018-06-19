@@ -25,3 +25,7 @@
 .shapeshifter.play {
   animation-name: play30;
 }
+#content {
+  display: flex;
+  flex-wrap: wrap;
+}
