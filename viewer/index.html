@@ -1,11 +1,25 @@
 <html>
 <head>
     <title>AVD Library</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
+
+    <div id="header">
+        <h1>AVD Library</h1>
+    </div>
+
 	<div id="settings">
-	  <input type="range" min="1000" max="20000" value="2000" class="slider" id="durationSlider">
+        <div id="durationLabel">Animation Duration: 2 sec</div>
+        <input type="range" min="1000" max="20000" value="2000" id="durationSlider">
 	</div>
 
     <div id="content"></div>
@@ -17,6 +31,7 @@
 
         var content = document.getElementById("content");
         var slider = document.getElementById("durationSlider");
+        var durationLabel = document.getElementById("durationLabel");
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
             updateAnimationDuration(this.value);
@@ -34,7 +49,12 @@
                 anims[i].style.animationTimingFunction = "steps(" + steps + ")";
 				anims[i].style.animationDuration = duration + "ms";
 			}
+            updateDurationLabel(duration);
 		}
+
+        function updateDurationLabel(duration) {
+            durationLabel.innerHTML = "Animation Duration: " + duration + " ms";
+        }
 
         function fetchTree(json, treeName) {
             for (var i in json.tree) {
