@@ -30,6 +30,8 @@
                 anims[i].offsetHeight; /* trigger reflow */
                 anims[i].style.animation = null;
 
+                var steps = anims[i].getAttribute("steps");
+                anims[i].style.animationTimingFunction = "steps(" + steps + ")";
 				anims[i].style.animationDuration = duration + "ms";
 			}
 		}
@@ -50,10 +52,24 @@
         function addSpriteSheet(path) {
             var url = BASE_SPRITE_URL + path;
             console.log(url);
-            var div = document.createElement("div");
-            div.className = "shapeshifter play";
-            div.style.backgroundImage = "url(" + url + ")";
-            content.appendChild(div);
+
+            var bgImg = new Image();
+            bgImg.onload = function(){
+                var ratio = bgImg.width / bgImg.height;
+                var steps = ratio - 1;
+                var duration = 1000 * steps / 60;
+                console.log(path, ratio)
+                var div = document.createElement("div");
+                div.className = "shapeshifter play";
+                div.style.backgroundImage = 'url(' + bgImg.src + ')';
+                div.style.animationTimingFunction = "steps(" + steps + ")";
+
+                div.setAttribute("steps", steps);
+                div.setAttribute("duration", duration + "ms");
+
+                content.appendChild(div);
+            };
+            bgImg.src = url;
         }
 
         // get all spritesheets in repo using Github API
