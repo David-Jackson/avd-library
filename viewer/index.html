@@ -73,13 +73,13 @@
             var url = BASE_SPRITE_URL + path;
             console.log(url);
 
+            var div = document.createElement("div");
             var bgImg = new Image();
             bgImg.onload = function(){
                 var ratio = bgImg.width / bgImg.height;
                 var steps = ratio - 1;
                 var duration = 1000 * steps / 60;
                 console.log(path, ratio)
-                var div = document.createElement("div");
                 div.className = "shapeshifter play";
                 div.style.backgroundImage = 'url(' + bgImg.src + ')';
                 div.style.animationTimingFunction = "steps(" + steps + ")";
@@ -87,8 +87,8 @@
                 div.setAttribute("steps", steps);
                 div.setAttribute("duration", duration + "ms");
 
-                content.appendChild(div);
             };
+            content.appendChild(div);
             bgImg.src = url;
         }
 
